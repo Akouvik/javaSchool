@@ -4,12 +4,19 @@ public class Teacher {
   private int id;
   private String name;
   private int salary;
+  private int salaryEarned;
+
+  @Override
+  public String toString() {
+    return "Teacher's name is " + name + " and the salary earned is $" + salaryEarned;
+  }
 
   // creates a new teacher object initializing the id, name and salary
   public Teacher(int id, String name, int salary) {
     this.id = id;
     this.name = name;
     this.salary = salary;
+    this.salaryEarned = 0;
 
   }
 
@@ -36,8 +43,10 @@ public class Teacher {
     this.salary = salary;
   }
 
-  public static void main(String[] args) {
-
+  // paying teachers and remove salary from total money earned from school
+  public void receiveSalary(int salary) {
+    this.salaryEarned += salary;
+    School.updateTotalMoneySpent(salary);
   }
 
 }

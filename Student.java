@@ -22,6 +22,11 @@ public class Student {
     this.grade = grade;
   }
 
+  // fees paid to school
+  public void payFees(int fees) {
+    this.feesPaid += fees;
+    School.updateTotalMoneyEarned(feesPaid);
+  }
   // we will not be altering a students name or id so no set method is needed
 
   public int getId() {
@@ -46,6 +51,11 @@ public class Student {
     return totalFees;
   }
 
+  // fees paid to school
+  public int getRemainingFees() {
+    return totalFees - feesPaid;
+  }
+
   // setters
 
   // used to update the students grade
@@ -53,9 +63,9 @@ public class Student {
     this.grade = grade;
   }
 
-  public void updateFeesPaid(int fees) {
-    this.feesPaid += fees;
-    this.totalFees -= fees;
+  @Override
+  public String toString() {
+    return "Student's name is  " + name + " and the totals fees paid so are is $" + feesPaid;
   }
 
   public static void main(String[] args) {

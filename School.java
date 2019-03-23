@@ -12,15 +12,15 @@ public class School {
    */
   private List<Teacher> teachers;
   private List<Student> students;
-  private int totalMoneyEarned;
-  private int totalMoneySpent;
+  private static int totalMoneyEarned;
+  private static int totalMoneySpent;
 
   // create a constructor and initialize the list of teachers and students
   public School(List<Teacher> teachers, List<Student> students) {
     this.teachers = teachers;
     this.students = students;
-    this.totalMoneyEarned = 0;
-    this.totalMoneySpent = 0;
+    totalMoneyEarned = 0;
+    totalMoneySpent = 0;
   }
 
   // getters
@@ -35,11 +35,11 @@ public class School {
   }
 
   public int totalMoneyEarned() {
-    return this.totalMoneyEarned;
+    return totalMoneyEarned;
   }
 
   public int totalMoneySpent() {
-    return this.totalMoneySpent;
+    return totalMoneySpent;
   }
 
   // setters
@@ -54,12 +54,12 @@ public class School {
     this.students.add(studentToAdd);
   }
 
-  public void updateTotalMoneyEarned(int MoneyEarned) {
-    this.totalMoneyEarned += MoneyEarned;
+  public static void updateTotalMoneyEarned(int MoneyEarned) {
+    totalMoneyEarned += MoneyEarned;
   }
 
-  public void updateTotalMoneySpent(int MoneySpent) {
-    this.totalMoneyEarned -= MoneySpent;
+  public static void updateTotalMoneySpent(int MoneySpent) {
+    totalMoneyEarned -= MoneySpent;
     // salary given by school to its teachers
     // this.totalMoneySpent += MoneySpent;
   }

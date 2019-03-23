@@ -2,6 +2,8 @@ import java.util.List;
 import java.util.ArrayList;
 
 public class Main {
+
+  // this should be a text user interface but for now this will do
   public static void main(String[] args) {
     Teacher lizzy = new Teacher(1, "lizzy", 500);
     Teacher shiva = new Teacher(2, "shiva", 700);
@@ -23,6 +25,31 @@ public class Main {
     studentList.add(rabbi);
 
     School ghs = new School(teacherList, studentList);
-    System.out.println("ghs has earned $" + ghs.totalMoneyEarned());
+    Teacher megan = new Teacher(6, "megan", 540);
+
+    ghs.addTeacher(megan);
+    // student brian
+    brian.payFees(5000);
+    System.out.println("GHS has earned $" + ghs.totalMoneyEarned());
+    brian.payFees(6000);
+    // total money school earned
+    System.out.println("GHS has earned $" + ghs.totalMoneyEarned());
+
+    System.out.println("------------MAKING School PAY SLARY -------------");
+    // teacher lizzy getting paid
+    lizzy.receiveSalary(lizzy.getSalary());
+    System.out.println("------------GHS has paid " + lizzy.getName() + " $" + lizzy.getSalary() + " and now has $"
+        + ghs.totalMoneyEarned() + " left");
+
+    // teacher shiva
+    shiva.receiveSalary(shiva.getSalary());
+    System.out.println("------------GHS has paid " + shiva.getName() + " $" + shiva.getSalary() + " and now has $"
+        + ghs.totalMoneyEarned() + " left");
+
+    // printout without toString
+    System.out.println(brian);
+    matt.receiveSalary(matt.getSalary());
+    System.out.println(matt);
+
   }
 }
